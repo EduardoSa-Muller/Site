@@ -198,13 +198,12 @@ export default function Home() {
         <div className="team-layout">
           <div>
             <h2>Pequeno por escolha.<br /><em>Grande por intenção.</em></h2>
-            <p className="team-lede">Somos amigos que jogam RPG juntos há mais de 20 anos. A Damiens&amp;Devs nasceu da saudade de estar na mesma mesa e da vontade de criar um mundo nosso, com ferramentas para que outras pessoas também possam deixar suas marcas.</p>
+            <p className="team-lede">Somos três amigos que jogam RPG juntos há mais de 20 anos. A Damiens&amp;Devs nasceu da saudade de estar na mesma mesa e da vontade de criar um mundo nosso, com ferramentas para que outras pessoas também possam deixar suas marcas.</p>
           </div>
           <div className="team-roles">
-            <div className="role-row"><span>01</span><strong>Direção criativa</strong><small>visão · ritmo · tom</small></div>
-            <div className="role-row"><span>02</span><strong>Design & sistemas</strong><small>regras · protótipos · playtest</small></div>
-            <div className="role-row"><span>03</span><strong>Arte & mundos</strong><small>imagem · texto · atmosfera</small></div>
-            <div className="role-row"><span>04</span><strong>Comunidade</strong><small>escuta · acesso · conversa</small></div>
+            <div className="role-row"><span>01</span><strong>Eduardo Muller</strong><small>desenvolvedor criativo · fantasia imersiva</small></div>
+            <div className="role-row"><span>02</span><strong>Tiago Ramos</strong><small>desenvolvedor técnico · mesas através das eras</small></div>
+            <div className="role-row"><span>03</span><strong>Herick Muller</strong><small>analista dos dados do mundo · histórias e lendas vivas</small></div>
           </div>
         </div>
       </section>
