@@ -9,7 +9,6 @@ import {
   Linkedin,
   Mail,
   Menu,
-  MoveUpRight,
   Sparkles,
   X,
 } from "lucide-react";
@@ -24,26 +23,26 @@ const navItems = [
 const pillars = [
   {
     number: "01",
-    title: "Mundos com memória",
-    copy: "Cada reino carrega cicatrizes, rumores e escolhas que continuam existindo depois da sessão.",
+    title: "Memórias que viram mundo",
+    copy: "Tudo começa nas histórias que vivemos juntos e continua aberto para novas campanhas, grupos e lendas.",
   },
   {
     number: "02",
-    title: "Sistemas que convidam",
-    copy: "Regras que dão espaço para estratégia, improviso e aquela ideia inesperada da sua mesa.",
+    title: "Uma mesa sem distância",
+    copy: "A RealmCodex nasce para devolver a presença, a imersão e a sensação de jogar lado a lado.",
   },
   {
     number: "03",
-    title: "Feito em conversa",
-    copy: "Construímos em público: ouvindo quem joga, testando cedo e deixando a comunidade entrar no mapa.",
+    title: "Aberto a novas lendas",
+    copy: "Aeldria é nosso ponto de partida — não um ponto final. O mapa foi feito para receber outras histórias.",
   },
 ];
 
 const roadmap = [
-  { year: "2025", label: "Fundação", copy: "Conceito, identidade e primeiros fragmentos de mundo.", state: "feito" },
-  { year: "2026", label: "Primeira expedição", copy: "Protótipo jogável de RealmCodex e playtests abertos.", state: "agora" },
-  { year: "2027", label: "Aeldria ganha forma", copy: "Campanha de financiamento e publicação do primeiro livro-base.", state: "próximo" },
-  { year: "2028", label: "Mais longe do mapa", copy: "Expansões, colaborações e novas formas de jogar nossos mundos.", state: "depois" },
+  { year: "2025", label: "A decisão", copy: "Depois de 20 anos jogando juntos, decidimos criar nosso próprio estúdio e mundo.", state: "feito" },
+  { year: "2026", label: "Primeira expedição", copy: "RealmCodex ganha forma como plataforma jogável para nossas mesas e campanhas.", state: "agora" },
+  { year: "2027", label: "Aeldria se expande", copy: "Financiamento coletivo, novas campanhas e o primeiro grande ciclo de histórias.", state: "próximo" },
+  { year: "2028", label: "Novas lendas", copy: "Boardgames, ferramentas e mundos abertos para histórias que ainda não foram contadas.", state: "depois" },
 ];
 
 function scrollToId(id: string) {
@@ -65,11 +64,11 @@ export default function Home() {
   return (
     <main className="site-shell">
       <header className="topbar">
-        <a className="brand" href="#top" aria-label="RealmCodex & Aeldria — início">
+        <a className="brand" href="#top" aria-label="Damiens&Devs — início">
           <span className="brand-mark"><Compass size={20} strokeWidth={1.5} /></span>
           <span className="brand-lockup">
-            <strong>R/C</strong>
-            <span>RealmCodex · Aeldria</span>
+            <strong>D&amp;D</strong>
+            <span>Damiens&amp;Devs</span>
           </span>
         </a>
         <nav className={`nav-links ${menuOpen ? "is-open" : ""}`} aria-label="Navegação principal">
@@ -92,9 +91,9 @@ export default function Home() {
         <div className="hero-vignette" aria-hidden="true" />
         <div className="hero-grid" aria-hidden="true" />
         <div className="hero-content page-pad">
-          <p className="eyebrow"><span className="eyebrow-dot" /> Estúdio indie de mundos jogáveis</p>
-          <h1>Histórias para<br /><em>deixar marca.</em></h1>
-          <p className="hero-copy">Criamos jogos e experiências de RPG onde cada escolha redesenha o mapa — na mesa, na tela e na memória.</p>
+          <p className="eyebrow"><span className="eyebrow-dot" /> Damiens&amp;Devs · 20 anos de RPG</p>
+          <h1>Um mundo nosso.<br /><em>Uma mesa sem distância.</em></h1>
+          <p className="hero-copy">Somos amigos que jogam juntos há mais de 20 anos. Criamos a RealmCodex para continuar jogando — e transformamos nossas campanhas em Aeldria.</p>
           <div className="hero-actions">
             <button className="button button-primary" type="button" onClick={() => scrollToId("#projetos")}>
               Explorar os mundos <ArrowDownRight size={17} />
@@ -104,7 +103,7 @@ export default function Home() {
             </button>
           </div>
         </div>
-        <div className="hero-note hero-note-left">Est. 2025 · Brasil</div>
+        <div className="hero-note hero-note-left">Est. 2025 · Amigos desde sempre</div>
         <div className="hero-note hero-note-right">Lat. 23° 32' S<br />Long. 46° 38' W</div>
         <div className="hero-index">01 <span>/</span> 04</div>
         <div className="scroll-cue"><span>Desça para descobrir</span><ArrowDownRight size={17} /></div>
@@ -119,10 +118,10 @@ export default function Home() {
       <section className="intro section page-pad" id="estudio">
         <div className="section-kicker"><span>01</span><span>O estúdio</span><span className="line" /></div>
         <div className="intro-layout">
-          <h2>Não fazemos só jogos.<br /><em>Fazemos lugares para voltar.</em></h2>
+          <h2>A distância nos separou.<br /><em>O jogo nos reuniu.</em></h2>
           <div className="intro-aside">
-            <p>RealmCodex & Aeldria é um estúdio pequeno, independente e obcecado por mundos que parecem maiores do que a página. Criamos experiências autorais para quem gosta de olhar duas vezes — e encontrar uma nova história.</p>
-            <a className="inline-link" href="#equipe">Conheça quem está construindo <ArrowUpRight size={15} /></a>
+            <p>Somos a Damiens&amp;Devs: amigos, jogadores e criadores que passaram mais de duas décadas dividindo dados, mapas, risadas e batalhas. Quando a distância tornou nossos encontros mais raros, decidimos construir um lugar onde nossas mesas pudessem continuar vivas.</p>
+            <a className="inline-link" href="#equipe">Conheça nossa história <ArrowUpRight size={15} /></a>
           </div>
         </div>
         <div className="rule" />
@@ -142,7 +141,7 @@ export default function Home() {
         <div className="section-kicker"><span>02</span><span>Projetos em andamento</span><span className="line" /></div>
         <div className="projects-heading">
           <h2>Dois mundos.<br /><em>Um mesmo chamado.</em></h2>
-          <p>Projetos diferentes em forma, unidos pela vontade de colocar decisões difíceis nas mãos de quem joga.</p>
+          <p>RealmCodex é a plataforma. Aeldria é o mundo que estamos construindo dentro dela — com campanhas, suor, batalhas e espaço para muitas outras mesas.</p>
         </div>
         <div className="project-feature">
           <div className="project-feature-art" role="img" aria-label="Arte de Aeldria, um mapa celeste com astrolábio e frasco azul" />
@@ -152,7 +151,7 @@ export default function Home() {
             <div>
               <p className="project-type">TTRPG · Livro-base</p>
               <h3>Aeldria</h3>
-              <p className="project-description">Um mundo de fronteiras móveis, onde cartógrafos, órfãos das estrelas e cidades que esquecem lutam para decidir o que merece ser lembrado.</p>
+              <p className="project-description">O mundo que nasceu das nossas campanhas. Um lugar vivo, cheio de fronteiras, lendas e cicatrizes das batalhas que atravessamos juntos.</p>
               <a className="button button-light" href="#apoie">Ver o dossiê <ArrowUpRight size={16} /></a>
             </div>
           </div>
@@ -164,7 +163,7 @@ export default function Home() {
             <div className="secondary-body">
               <div className="secondary-top"><p className="project-type">RPG digital · Protótipo</p><span>R / 02</span></div>
               <h3>RealmCodex</h3>
-              <p>Uma ferramenta narrativa para transformar anotações soltas em aventuras vivas, prontas para atravessar a mesa.</p>
+              <p>A plataforma unificada de RPG de mesa e boardgames criada para aproximar jogadores, preservar nossas campanhas e aumentar a imersão — mesmo quando a vida coloca quilômetros entre nós.</p>
               <button className="inline-link" type="button" onClick={() => scrollToId("#roadmap")}>Acompanhar o desenvolvimento <ArrowUpRight size={15} /></button>
             </div>
           </article>
@@ -180,7 +179,7 @@ export default function Home() {
         <div className="section-kicker"><span>03</span><span>Roadmap público</span><span className="line" /></div>
         <div className="roadmap-heading">
           <h2>Um passo de cada vez.<br /><em>Sem atalhos no mapa.</em></h2>
-          <p>Transparência faz parte do design. Aqui está o que já atravessamos — e para onde estamos indo agora.</p>
+          <p>Estamos construindo com calma e em comunidade. Aqui está o caminho que começou com uma saudade e virou um universo inteiro.</p>
         </div>
         <div className="roadmap-list">
           {roadmap.map((item, index) => (
@@ -199,7 +198,7 @@ export default function Home() {
         <div className="team-layout">
           <div>
             <h2>Pequeno por escolha.<br /><em>Grande por intenção.</em></h2>
-            <p className="team-lede">Somos um núcleo criativo independente que mistura design de jogos, escrita e direção de arte para construir mundos com personalidade — e espaço para outras pessoas brilharem dentro deles.</p>
+            <p className="team-lede">Somos amigos que jogam RPG juntos há mais de 20 anos. A Damiens&amp;Devs nasceu da saudade de estar na mesma mesa e da vontade de criar um mundo nosso, com ferramentas para que outras pessoas também possam deixar suas marcas.</p>
           </div>
           <div className="team-roles">
             <div className="role-row"><span>01</span><strong>Direção criativa</strong><small>visão · ritmo · tom</small></div>
@@ -227,15 +226,10 @@ export default function Home() {
       </section>
 
       <footer className="footer page-pad">
-        <div className="footer-brand"><span className="brand-mark"><Compass size={19} strokeWidth={1.5} /></span><span><strong>RealmCodex & Aeldria</strong><small>Estúdio indie de mundos jogáveis</small></span></div>
+        <div className="footer-brand"><span className="brand-mark"><Compass size={19} strokeWidth={1.5} /></span><span><strong>Damiens&amp;Devs</strong><small>Amigos, RPG e mundos jogáveis</small></span></div>
         <div className="footer-meta"><span>© 2026 R/C</span><span>Feito com intenção, não com pressa.</span></div>
         <div className="footer-social"><a href="mailto:hello@realmcodex.studio" aria-label="Enviar e-mail"><Mail size={17} /></a><a href="#top" aria-label="Instagram"><Instagram size={17} /></a><a href="#top" aria-label="LinkedIn"><Linkedin size={17} /></a></div>
       </footer>
     </main>
   );
 }
-
-export { MoveUpRight };
-
-// Keep the visual language icon-led without introducing another component dependency.
-void MoveUpRight;
