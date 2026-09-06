@@ -142,8 +142,10 @@ button { border: 0; }
 .project-corner { position: absolute; top: 1.8rem; right: 1.8rem; color: rgba(231,228,220,.66); font-family: "Space Mono", monospace; font-size: .62rem; }
 .project-secondary-grid { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(230px, .5fr); gap: 1px; background: var(--line); }
 .project-secondary { display: grid; grid-template-columns: .72fr 1.28fr; background: #0f1416; min-height: 21rem; }
-.secondary-art { position: relative; background: radial-gradient(circle at 60% 35%, rgba(184,214,215,.18), transparent 23%), linear-gradient(135deg, #172126 0%, #0c1012 65%); overflow: hidden; }
-.secondary-art::before, .secondary-art::after { content: ""; position: absolute; border: 1px solid rgba(195,125,77,.5); border-radius: 50%; }
+.secondary-art { position: relative; background: #0c1012; overflow: hidden; }
+.secondary-art img { width: 100%; height: 100%; display: block; object-fit: cover; object-position: center; filter: saturate(.82) contrast(1.05); transition: transform .7s var(--ease-out), filter .3s ease; }
+.project-secondary:hover .secondary-art img { transform: scale(1.04); filter: saturate(1) contrast(1.05); }
+.secondary-art::before, .secondary-art::after { content: ""; position: absolute; z-index: 1; border: 1px solid rgba(195,125,77,.5); border-radius: 50%; pointer-events: none; }
 .secondary-art::before { width: 14rem; height: 14rem; top: 14%; left: 11%; }
 .secondary-art::after { width: 20rem; height: 20rem; top: -5%; left: -8%; border-color: rgba(184,214,215,.22); }
 .secondary-symbol { position: absolute; top: 37%; left: 38%; color: var(--copper); font-size: 6rem; transform: rotate(-30deg); z-index: 1; }

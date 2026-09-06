@@ -187,7 +187,7 @@ export default function Home() {
         </div>
         <div className="project-secondary-grid">
           <article className="project-secondary">
-            <div className="secondary-art" role="img" aria-label="Arte abstrata de um mapa e uma bússola em RealmCodex"><span className="secondary-symbol">⌁</span></div>
+            <div className="secondary-art" role="img" aria-label="Mesa digital de RPG da plataforma RealmCodex"><img src="/manus-storage/realmcodex-digital-platform_83d28fa3.jpg" alt="Mapa mágico com dados, miniaturas e conexões entre jogadores na RealmCodex" /></div>
             <div className="secondary-body">
               <div className="secondary-top"><p className="project-type">RPG digital · Protótipo</p><span>R / 02</span></div>
               <h3>RealmCodex</h3>
