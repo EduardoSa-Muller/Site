@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   ArrowDownRight,
   ArrowUpRight,
@@ -92,6 +92,21 @@ export default function Home() {
   const [submitted, setSubmitted] = useState(false);
   const [portraitStyle, setPortraitStyle] = useState<"adventure" | "heroic">("adventure");
 
+  useEffect(() => {
+    const revealItems = document.querySelectorAll<HTMLElement>(".reveal");
+    const observer = new IntersectionObserver(
+      (entries) => entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target);
+        }
+      }),
+      { threshold: 0.14 },
+    );
+    revealItems.forEach((item) => observer.observe(item));
+    return () => observer.disconnect();
+  }, []);
+
   function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
     if (!email.trim()) return;
@@ -153,7 +168,7 @@ export default function Home() {
         </div>
       </div>
 
-      <section className="intro section page-pad" id="estudio">
+      <section className="intro section page-pad reveal" id="estudio">
         <div className="section-kicker"><span>01</span><span>O estúdio</span><span className="line" /></div>
         <div className="intro-layout">
           <h2>A distância nos separou.<br /><em>O jogo nos reuniu.</em></h2>
@@ -164,8 +179,8 @@ export default function Home() {
         </div>
         <div className="rule" />
         <div className="pillar-grid">
-          {pillars.map((pillar) => (
-            <article className="pillar" key={pillar.number}>
+          {pillars.map((pillar, index) => (
+            <article className="pillar reveal" style={{ "--reveal-delay": `${index * 70}ms` } as React.CSSProperties} key={pillar.number}>
               <span className="pillar-number">{pillar.number}</span>
               <h3>{pillar.title}</h3>
               <p>{pillar.copy}</p>
@@ -175,13 +190,13 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="projects section page-pad" id="projetos">
+      <section className="projects section page-pad reveal" id="projetos">
         <div className="section-kicker"><span>02</span><span>Projetos em andamento</span><span className="line" /></div>
         <div className="projects-heading">
           <h2>Dois mundos.<br /><em>Um mesmo chamado.</em></h2>
           <p>RealmCodex é a plataforma. Aeldria é o mundo que estamos construindo dentro dela — com campanhas, suor, batalhas e espaço para muitas outras mesas.</p>
         </div>
-        <div className="project-feature">
+        <div className="project-feature reveal">
           <div className="project-feature-art" role="img" aria-label="Arte de Aeldria, um mapa celeste com astrolábio e frasco azul" />
           <div className="project-feature-overlay" />
           <div className="project-feature-content">
@@ -195,7 +210,7 @@ export default function Home() {
           </div>
           <span className="project-corner">A / 01</span>
         </div>
-        <div className="project-secondary-grid">
+        <div className="project-secondary-grid reveal">
           <article className="project-secondary">
             <div className="secondary-art" role="img" aria-label="Mesa digital de RPG da plataforma RealmCodex"><img src="/manus-storage/realmcodex-digital-platform_83d28fa3.jpg" alt="Mapa mágico com dados, miniaturas e conexões entre jogadores na RealmCodex" /></div>
             <div className="secondary-body">
@@ -213,7 +228,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="platform section page-pad" id="plataforma">
+      <section className="platform section page-pad reveal" id="plataforma">
         <div className="section-kicker"><span>03</span><span>A plataforma</span><span className="line" /></div>
         <div className="platform-heading">
           <div>
@@ -223,12 +238,12 @@ export default function Home() {
           <div className="platform-intro"><p>RealmCodex é o lugar onde nossas mesas continuam existindo quando a distância aparece. Uma plataforma unificada para preparar, jogar e guardar cada capítulo das campanhas de RPG e boardgames.</p><a className="button button-primary" href="https://role-playingz.netlify.app/" target="_blank" rel="noreferrer">Abrir RealmCodex <ArrowUpRight size={16} /></a></div>
         </div>
         <div className="platform-grid">
-          {platformFeatures.map((feature) => <article className="platform-feature" key={feature.number}><span>{feature.number}</span><h3>{feature.title}</h3><p>{feature.copy}</p></article>)}
+          {platformFeatures.map((feature, index) => <article className="platform-feature reveal" style={{ "--reveal-delay": `${index * 55}ms` } as React.CSSProperties} key={feature.number}><span>{feature.number}</span><h3>{feature.title}</h3><p>{feature.copy}</p></article>)}
         </div>
         <div className="platform-bottom"><span>Prepare · Jogue · Registre</span><a className="inline-link" href="https://role-playingz.netlify.app/" target="_blank" rel="noreferrer">Começar uma campanha <ArrowUpRight size={15} /></a></div>
       </section>
 
-      <section className="roadmap section page-pad" id="roadmap">
+      <section className="roadmap section page-pad reveal" id="roadmap">
         <div className="section-kicker"><span>04</span><span>Roadmap público</span><span className="line" /></div>
         <div className="roadmap-heading">
           <h2>Um passo de cada vez.<br /><em>Sem atalhos no mapa.</em></h2>
@@ -236,7 +251,7 @@ export default function Home() {
         </div>
         <div className="roadmap-list">
           {roadmap.map((item, index) => (
-            <div className={`roadmap-item ${item.state === "agora" ? "current" : ""}`} key={item.year}>
+            <div className={`roadmap-item reveal ${item.state === "agora" ? "current" : ""}`} style={{ "--reveal-delay": `${index * 90}ms` } as React.CSSProperties} key={item.year}>
               <div className="roadmap-year">{item.year}</div>
               <div className="roadmap-marker"><span /></div>
               <div className="roadmap-copy"><div className="roadmap-title"><h3>{item.label}</h3><span>{item.state}</span></div><p>{item.copy}</p></div>
@@ -246,7 +261,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="team section page-pad" id="equipe">
+      <section className="team section page-pad reveal" id="equipe">
         <div className="section-kicker"><span>05</span><span>Quem faz</span><span className="line" /></div>
         <div className="team-layout">
           <div>
@@ -271,7 +286,7 @@ export default function Home() {
         </div>
         <div className="team-gallery">
           {teamCharacters.map((character, index) => (
-            <article className="character-card" key={character.name}>
+            <article className="character-card reveal" style={{ "--reveal-delay": `${index * 90}ms` } as React.CSSProperties} key={character.name}>
               <div className="character-portrait">
                 <img src={portraitStyle === "adventure" ? character.adventure : character.heroic} alt={character.alt} />
                 <span className="character-index">0{index + 1}</span>
@@ -282,7 +297,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="support section page-pad" id="apoie">
+      <section className="support section page-pad reveal" id="apoie">
         <div className="support-orbit" aria-hidden="true"><Disc3 size={430} strokeWidth={0.45} /></div>
         <div className="support-content">
           <p className="eyebrow"><span className="eyebrow-dot" /> Próxima parada</p>

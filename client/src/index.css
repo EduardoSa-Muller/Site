@@ -56,6 +56,8 @@ button { border: 0; }
 .site-shell { min-height: 100vh; overflow: hidden; background: #0b0d0f; }
 .page-pad { padding-left: clamp(1.25rem, 6vw, 7.5rem); padding-right: clamp(1.25rem, 6vw, 7.5rem); }
 .section { padding-top: clamp(5rem, 10vw, 9.5rem); padding-bottom: clamp(5rem, 10vw, 9.5rem); position: relative; }
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity .72s var(--ease-out), transform .72s var(--ease-out); transition-delay: var(--reveal-delay, 0ms); }
+.reveal.is-visible { opacity: 1; transform: translateY(0); }
 
 .topbar {
   position: absolute; z-index: 10; top: 0; left: 0; right: 0; display: flex; align-items: center; justify-content: space-between;
@@ -75,10 +77,10 @@ button { border: 0; }
 .menu-toggle { display: none; color: var(--ink); background: transparent; padding: .3rem; }
 
 .hero { min-height: min(860px, 100vh); position: relative; display: flex; align-items: center; overflow: hidden; border-bottom: 1px solid var(--line); isolation: isolate; }
-.hero-art { position: absolute; inset: 0; background: url('/manus-storage/realmcodex-hero_197ab7e7.jpg') center / cover no-repeat; z-index: -4; transform: scale(1.01); }
+.hero-art { position: absolute; inset: -2%; background: url('/manus-storage/realmcodex-hero_197ab7e7.jpg') center / cover no-repeat; z-index: -4; transform: scale(1.01); animation: hero-drift 14s ease-in-out infinite alternate; }
 .hero-vignette { position: absolute; inset: 0; z-index: -3; background: linear-gradient(90deg, rgba(11,13,15,.98) 0%, rgba(11,13,15,.8) 33%, rgba(11,13,15,.22) 69%, rgba(11,13,15,.58) 100%), linear-gradient(0deg, rgba(11,13,15,.56) 0%, transparent 50%, rgba(11,13,15,.25) 100%); }
 .hero-grid { position: absolute; inset: 0; z-index: -2; opacity: .24; background-image: linear-gradient(rgba(184,214,215,.13) 1px, transparent 1px), linear-gradient(90deg, rgba(184,214,215,.13) 1px, transparent 1px); background-size: 76px 76px; mask-image: linear-gradient(90deg, rgba(0,0,0,.65), transparent 72%); }
-.hero-content { width: min(100%, 1440px); padding-top: clamp(8rem, 17vh, 13rem); padding-bottom: 7rem; }
+.hero-content { width: min(100%, 1440px); padding-top: clamp(8rem, 17vh, 13rem); padding-bottom: 7rem; animation: hero-enter .9s var(--ease-out) both; }
 .eyebrow { display: flex; align-items: center; gap: .6rem; margin: 0 0 1.5rem; color: #d2a17d; text-transform: uppercase; letter-spacing: .22em; font-size: .64rem; font-weight: 700; }
 .eyebrow-dot { width: .42rem; height: .42rem; background: var(--copper); display: inline-block; border-radius: 50%; box-shadow: 0 0 18px var(--copper); }
 .hero h1, h2, h3 { font-family: "Cormorant Garamond", Georgia, serif; font-weight: 400; letter-spacing: -.045em; margin: 0; }
@@ -105,6 +107,8 @@ button { border: 0; }
 .ticker-track { width: max-content; display: flex; align-items: center; gap: 1.35rem; padding: .82rem 0; animation: ticker 28s linear infinite; font-family: "Space Mono", monospace; text-transform: uppercase; font-size: .62rem; letter-spacing: .11em; }
 .ticker i { font-style: normal; color: var(--copper); font-size: .85rem; }
 @keyframes ticker { to { transform: translateX(-50%); } }
+@keyframes hero-enter { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes hero-drift { from { transform: scale(1.01) translate3d(0, 0, 0); } to { transform: scale(1.045) translate3d(-.8%, -.5%, 0); } }
 
 .section-kicker { display: flex; align-items: center; gap: .9rem; color: var(--muted); text-transform: uppercase; letter-spacing: .17em; font-size: .6rem; font-weight: 700; }
 .section-kicker > span:first-child { color: var(--copper); font-family: "Space Mono", monospace; }
