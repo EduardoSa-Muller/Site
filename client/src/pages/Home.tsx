@@ -117,11 +117,11 @@ export default function Home() {
   return (
     <main className="site-shell">
       <header className="topbar">
-        <a className="brand" href="#top" aria-label="Damiens&Devs — início">
+        <a className="brand" href="#top" aria-label="Damiens Studios — início">
           <span className="brand-mark"><Compass size={20} strokeWidth={1.5} /></span>
           <span className="brand-lockup">
             <strong>D&amp;D</strong>
-            <span>Damiens&amp;Devs</span>
+            <span>Damiens Studios</span>
           </span>
         </a>
         <nav className={`nav-links ${menuOpen ? "is-open" : ""}`} aria-label="Navegação principal">
@@ -149,7 +149,7 @@ export default function Home() {
         <div className="hero-mist" aria-hidden="true" />
         <div className="hero-compass-glow" aria-hidden="true" />
         <div className="hero-content page-pad">
-          <p className="eyebrow"><span className="eyebrow-dot" /> Damiens&amp;Devs · 20 anos de RPG</p>
+          <p className="eyebrow"><span className="eyebrow-dot" /> Damiens Studios · 20 anos de RPG</p>
           <h1>Um mundo nosso.<br /><em>Uma mesa sem distância.</em></h1>
           <p className="hero-copy">Somos amigos que jogam juntos há mais de 20 anos. Criamos a RealmCodex para continuar jogando — e transformamos nossas campanhas em Aeldria.</p>
           <div className="hero-actions">
@@ -178,7 +178,7 @@ export default function Home() {
         <div className="intro-layout">
           <h2>A distância nos separou.<br /><em>O jogo nos reuniu.</em></h2>
           <div className="intro-aside">
-            <p>Somos a Damiens&amp;Devs: amigos, jogadores e criadores que passaram mais de duas décadas dividindo dados, mapas, risadas e batalhas. Quando a distância tornou nossos encontros mais raros, decidimos construir um lugar onde nossas mesas pudessem continuar vivas.</p>
+            <p>Somos a Damiens Studios: amigos, jogadores e criadores que passaram mais de duas décadas dividindo dados, mapas, risadas e batalhas. Quando a distância tornou nossos encontros mais raros, decidimos construir um lugar onde nossas mesas pudessem continuar vivas.</p>
             <a className="inline-link" href="#equipe">Conheça nossa história <ArrowUpRight size={15} /></a>
           </div>
         </div>
@@ -271,7 +271,7 @@ export default function Home() {
         <div className="team-layout">
           <div>
             <h2>Pequeno por escolha.<br /><em>Grande por intenção.</em></h2>
-            <p className="team-lede">Somos três amigos que jogam RPG juntos há mais de 20 anos. A Damiens&amp;Devs nasceu da saudade de estar na mesma mesa e da vontade de criar um mundo nosso, com ferramentas para que outras pessoas também possam deixar suas marcas.</p>
+            <p className="team-lede">Somos três amigos que jogam RPG juntos há mais de 20 anos. A Damiens Studios nasceu da saudade de estar na mesma mesa e da vontade de criar um mundo nosso, com ferramentas para que outras pessoas também possam deixar suas marcas.</p>
           </div>
           <div className="team-roles team-roles-copy">
             <div className="role-row"><span>01</span><strong>Eduardo Muller</strong><small>desenvolvedor criativo · fantasia imersiva</small></div>
@@ -319,7 +319,7 @@ export default function Home() {
       </section>
 
       <footer className="footer page-pad">
-        <div className="footer-brand"><span className="brand-mark"><Compass size={19} strokeWidth={1.5} /></span><span><strong>Damiens&amp;Devs</strong><small>Amigos, RPG e mundos jogáveis</small></span></div>
+        <div className="footer-brand"><span className="brand-mark"><Compass size={19} strokeWidth={1.5} /></span><span><strong>Damiens Studios</strong><small>Amigos, RPG e mundos jogáveis</small></span></div>
         <div className="footer-meta"><span>© 2026 R/C</span><span>Feito com intenção, não com pressa.</span></div>
         <div className="footer-social"><a href="mailto:hello@realmcodex.studio" aria-label="Enviar e-mail"><Mail size={17} /></a><a href="#top" aria-label="Instagram"><Instagram size={17} /></a><a href="#top" aria-label="LinkedIn"><Linkedin size={17} /></a></div>
       </footer>
