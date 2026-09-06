@@ -144,6 +144,10 @@ export default function Home() {
         <div className="hero-vignette" aria-hidden="true" />
         <div className="hero-grid" aria-hidden="true" />
         <div className="hero-character-aura" aria-hidden="true" />
+        <div className="hero-stars" aria-hidden="true" />
+        <div className="hero-constellation" aria-hidden="true" />
+        <div className="hero-mist" aria-hidden="true" />
+        <div className="hero-compass-glow" aria-hidden="true" />
         <div className="hero-content page-pad">
           <p className="eyebrow"><span className="eyebrow-dot" /> Damiens&amp;Devs · 20 anos de RPG</p>
           <h1>Um mundo nosso.<br /><em>Uma mesa sem distância.</em></h1>
