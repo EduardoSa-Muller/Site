@@ -192,7 +192,7 @@ export default function Home() {
               <div className="secondary-top"><p className="project-type">RPG digital · Protótipo</p><span>R / 02</span></div>
               <h3>RealmCodex</h3>
               <p>A plataforma unificada de RPG de mesa e boardgames criada para aproximar jogadores, preservar nossas campanhas e aumentar a imersão — mesmo quando a vida coloca quilômetros entre nós.</p>
-              <button className="inline-link" type="button" onClick={() => scrollToId("#roadmap")}>Acompanhar o desenvolvimento <ArrowUpRight size={15} /></button>
+              <a className="inline-link" href="https://role-playingz.netlify.app/" target="_blank" rel="noreferrer">Abrir a plataforma RealmCodex <ArrowUpRight size={15} /></a>
             </div>
           </article>
           <aside className="manifesto-card">
