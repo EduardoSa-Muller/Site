@@ -208,6 +208,21 @@ button { border: 0; }
 .character-info p { margin: .2rem 0 0; color: #536165; text-transform: uppercase; letter-spacing: .1em; font-size: .56rem; font-weight: 800; }
 .character-info span { display: block; margin-top: .55rem; color: #748182; font-size: .68rem; }
 
+.platform { background: #0f1619; }
+.platform-heading { display: flex; justify-content: space-between; align-items: end; gap: 3rem; margin-top: 4rem; }
+.platform-heading .project-type { color: var(--copper); margin: 0 0 1rem; }
+.platform-heading h2 { color: #e7e4dc; font-size: clamp(3.8rem, 7vw, 7.2rem); line-height: .8; }
+.platform-heading h2 em { color: var(--mist); }
+.platform-intro { max-width: 28rem; padding-bottom: .25rem; }
+.platform-intro p { color: var(--muted); line-height: 1.85; font-size: .88rem; margin: 0 0 1.6rem; }
+.platform-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; margin-top: 5rem; background: var(--line); border: 1px solid var(--line); }
+.platform-feature { min-height: 12.5rem; padding: 1.6rem; background: #0f1619; transition: background .2s ease; }
+.platform-feature:hover { background: #172226; }
+.platform-feature > span { color: var(--copper); font-family: "Space Mono", monospace; font-size: .6rem; }
+.platform-feature h3 { color: #e7e4dc; font-size: 1.75rem; line-height: .95; margin: 2.7rem 0 .65rem; letter-spacing: -.025em; }
+.platform-feature p { color: var(--muted); max-width: 16rem; font-size: .75rem; line-height: 1.7; margin: 0; }
+.platform-bottom { display: flex; align-items: center; justify-content: space-between; margin-top: 2rem; color: #7f8c8c; text-transform: uppercase; letter-spacing: .15em; font-size: .55rem; }
+
 .support { min-height: 36rem; display: grid; place-items: center; background: #111619; overflow: hidden; }
 .support::before { content: ""; position: absolute; inset: 0; opacity: .38; background-image: linear-gradient(rgba(184,214,215,.1) 1px, transparent 1px), linear-gradient(90deg, rgba(184,214,215,.1) 1px, transparent 1px); background-size: 80px 80px; mask-image: radial-gradient(circle at 50% 50%, black, transparent 70%); }
 .support-orbit { position: absolute; right: 5%; top: 50%; transform: translateY(-50%); color: rgba(184,214,215,.2); }
@@ -333,6 +348,15 @@ button { border: 0; }
   .team-gallery { grid-template-columns: 1fr; gap: 2rem; margin-top: 1.5rem; }
   .character-portrait { height: min(108vw, 30rem); }
   .character-info { padding-top: .75rem; }
+  .platform-heading { display: block; margin-top: 2.8rem; }
+  .platform-heading h2 { font-size: clamp(3.7rem, 16vw, 5rem); }
+  .platform-intro { margin-top: 1.8rem; }
+  .platform-intro p { font-size: .8rem; }
+  .platform-intro .button { width: 100%; }
+  .platform-grid { grid-template-columns: 1fr; margin-top: 3.2rem; }
+  .platform-feature { min-height: auto; padding: 1.3rem; }
+  .platform-feature h3 { margin-top: 1.7rem; font-size: 1.7rem; }
+  .platform-bottom { align-items: flex-start; flex-direction: column; gap: 1.1rem; }
   .role-row { gap: .7rem; padding: .95rem 0; }
   .role-row strong { font-size: 1.45rem; }
   .role-row small { font-size: .48rem; }

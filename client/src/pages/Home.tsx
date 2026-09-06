@@ -16,6 +16,7 @@ import {
 const navItems = [
   { label: "Estúdio", href: "#estudio" },
   { label: "Projetos", href: "#projetos" },
+  { label: "RealmCodex", href: "https://role-playingz.netlify.app/", external: true },
   { label: "Roadmap", href: "#roadmap" },
   { label: "Equipe", href: "#equipe" },
 ];
@@ -72,6 +73,15 @@ const teamCharacters = [
   },
 ];
 
+const platformFeatures = [
+  { number: "01", title: "Campanhas conectadas", copy: "Grupos, missões e sessões vivem dentro da mesma história, sem anotações espalhadas." },
+  { number: "02", title: "Mesa tática 2D", copy: "Grade, tokens, ferramentas e combate funcional para conduzir cada encontro." },
+  { number: "03", title: "Construção em 3D", copy: "Modelos, câmera, cenários e visão espacial para aumentar a presença na mesa." },
+  { number: "04", title: "Atlas de Aeldria", copy: "Cidades, regiões e livros de viagem para transformar o mundo em um lugar navegável." },
+  { number: "05", title: "Diário vivo", copy: "O que acontece na mesa vira capítulo, mantendo cada sessão e cada decisão na memória." },
+  { number: "06", title: "Biblioteca de personagens", copy: "Fichas e elenco da campanha organizados para o grupo acessar quando precisar." },
+];
+
 function scrollToId(id: string) {
   document.querySelector(id)?.scrollIntoView({ behavior: "smooth" });
 }
@@ -101,7 +111,7 @@ export default function Home() {
         </a>
         <nav className={`nav-links ${menuOpen ? "is-open" : ""}`} aria-label="Navegação principal">
           {navItems.map((item) => (
-            <a key={item.href} href={item.href} onClick={() => setMenuOpen(false)}>
+            <a key={item.href} href={item.href} target={item.external ? "_blank" : undefined} rel={item.external ? "noreferrer" : undefined} onClick={() => setMenuOpen(false)}>
               {item.label}
             </a>
           ))}
@@ -203,8 +213,23 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="platform section page-pad" id="plataforma">
+        <div className="section-kicker"><span>03</span><span>A plataforma</span><span className="line" /></div>
+        <div className="platform-heading">
+          <div>
+            <p className="project-type">RealmCodex · RPG digital</p>
+            <h2>Sua mesa.<br /><em>Sua campanha.</em></h2>
+          </div>
+          <div className="platform-intro"><p>RealmCodex é o lugar onde nossas mesas continuam existindo quando a distância aparece. Uma plataforma unificada para preparar, jogar e guardar cada capítulo das campanhas de RPG e boardgames.</p><a className="button button-primary" href="https://role-playingz.netlify.app/" target="_blank" rel="noreferrer">Abrir RealmCodex <ArrowUpRight size={16} /></a></div>
+        </div>
+        <div className="platform-grid">
+          {platformFeatures.map((feature) => <article className="platform-feature" key={feature.number}><span>{feature.number}</span><h3>{feature.title}</h3><p>{feature.copy}</p></article>)}
+        </div>
+        <div className="platform-bottom"><span>Prepare · Jogue · Registre</span><a className="inline-link" href="https://role-playingz.netlify.app/" target="_blank" rel="noreferrer">Começar uma campanha <ArrowUpRight size={15} /></a></div>
+      </section>
+
       <section className="roadmap section page-pad" id="roadmap">
-        <div className="section-kicker"><span>03</span><span>Roadmap público</span><span className="line" /></div>
+        <div className="section-kicker"><span>04</span><span>Roadmap público</span><span className="line" /></div>
         <div className="roadmap-heading">
           <h2>Um passo de cada vez.<br /><em>Sem atalhos no mapa.</em></h2>
           <p>Estamos construindo com calma e em comunidade. Aqui está o caminho que começou com uma saudade e virou um universo inteiro.</p>
@@ -222,7 +247,7 @@ export default function Home() {
       </section>
 
       <section className="team section page-pad" id="equipe">
-        <div className="section-kicker"><span>04</span><span>Quem faz</span><span className="line" /></div>
+        <div className="section-kicker"><span>05</span><span>Quem faz</span><span className="line" /></div>
         <div className="team-layout">
           <div>
             <h2>Pequeno por escolha.<br /><em>Grande por intenção.</em></h2>
