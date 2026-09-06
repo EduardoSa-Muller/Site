@@ -187,6 +187,24 @@ button { border: 0; }
 .role-row span { color: #9a5937; font-family: "Space Mono", monospace; font-size: .6rem; }
 .role-row strong { font-family: "Cormorant Garamond", Georgia, serif; font-size: 1.7rem; font-weight: 500; }
 .role-row small { text-transform: uppercase; color: #748182; letter-spacing: .12em; font-size: .52rem; }
+.team-gallery-heading { display: flex; align-items: end; justify-content: space-between; gap: 2rem; margin-top: 6rem; }
+.team-gallery-heading .project-type { color: #9a5937; margin: 0 0 .7rem; }
+.team-gallery-heading h3 { color: #182022; font-size: clamp(2.8rem, 5vw, 5rem); line-height: .83; }
+.team-gallery-heading h3 em { color: #4b7276; font-style: italic; }
+.portrait-switcher { display: inline-flex; gap: .25rem; padding: .25rem; border: 1px solid rgba(24,32,34,.25); }
+.portrait-switcher button { padding: .7rem .85rem; color: #647273; background: transparent; cursor: pointer; text-transform: uppercase; letter-spacing: .1em; font-size: .55rem; font-weight: 800; transition: background .2s ease, color .2s ease; }
+.portrait-switcher button.active { color: #d5e2de; background: #182022; }
+.team-gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 2.2rem; }
+.character-card { min-width: 0; }
+.character-portrait { height: clamp(22rem, 36vw, 34rem); position: relative; overflow: hidden; background: #182022; }
+.character-portrait::after { content: ""; position: absolute; inset: 0; background: linear-gradient(0deg, rgba(10,15,16,.62), transparent 38%); pointer-events: none; }
+.character-portrait img { width: 100%; height: 100%; display: block; object-fit: cover; object-position: center top; transition: transform .7s var(--ease-out); }
+.character-card:hover .character-portrait img { transform: scale(1.04); }
+.character-index { position: absolute; z-index: 1; right: 1rem; top: 1rem; color: #f1d4b8; font-family: "Space Mono", monospace; font-size: .6rem; }
+.character-info { padding: 1rem 0 0; color: #182022; }
+.character-info h4 { margin: 0; font-family: "Cormorant Garamond", Georgia, serif; font-size: 1.8rem; font-weight: 500; letter-spacing: -.03em; }
+.character-info p { margin: .2rem 0 0; color: #536165; text-transform: uppercase; letter-spacing: .1em; font-size: .56rem; font-weight: 800; }
+.character-info span { display: block; margin-top: .55rem; color: #748182; font-size: .68rem; }
 
 .support { min-height: 36rem; display: grid; place-items: center; background: #111619; overflow: hidden; }
 .support::before { content: ""; position: absolute; inset: 0; opacity: .38; background-image: linear-gradient(rgba(184,214,215,.1) 1px, transparent 1px), linear-gradient(90deg, rgba(184,214,215,.1) 1px, transparent 1px); background-size: 80px 80px; mask-image: radial-gradient(circle at 50% 50%, black, transparent 70%); }
@@ -306,6 +324,13 @@ button { border: 0; }
   .roadmap-title h3 { font-size: 1.45rem; }
   .roadmap-copy p { font-size: .74rem; }
   .team-layout { margin-top: 2.8rem; gap: 2.4rem; }
+  .team-gallery-heading { align-items: flex-start; flex-direction: column; margin-top: 4rem; gap: 1.4rem; }
+  .team-gallery-heading h3 { font-size: clamp(3rem, 14vw, 4.3rem); }
+  .portrait-switcher { width: 100%; }
+  .portrait-switcher button { flex: 1; }
+  .team-gallery { grid-template-columns: 1fr; gap: 2rem; margin-top: 1.5rem; }
+  .character-portrait { height: min(108vw, 30rem); }
+  .character-info { padding-top: .75rem; }
   .role-row { gap: .7rem; padding: .95rem 0; }
   .role-row strong { font-size: 1.45rem; }
   .role-row small { font-size: .48rem; }

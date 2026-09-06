@@ -45,6 +45,33 @@ const roadmap = [
   { year: "2028", label: "Novas lendas", copy: "Boardgames, ferramentas e mundos abertos para histórias que ainda não foram contadas.", state: "depois" },
 ];
 
+const teamCharacters = [
+  {
+    name: "Eduardo Muller",
+    role: "Desenvolvedor criativo",
+    detail: "Fantasia imersiva",
+    adventure: "/manus-storage/eduardo-cartoon-adventure_d4899874.png",
+    heroic: "/manus-storage/eduardo-cartoon-heroic_7fecfc3a.png",
+    alt: "Eduardo como um anão inventor de barba castanha em arte cartoon de fantasia",
+  },
+  {
+    name: "Tiago Ramos",
+    role: "Desenvolvedor técnico",
+    detail: "Mesas através das eras",
+    adventure: "/manus-storage/tiago-cartoon-adventure_26d4f5d2.png",
+    heroic: "/manus-storage/tiago-cartoon-heroic_c50c9b8c.png",
+    alt: "Tiago como um guerreiro humano de armadura escura em arte cartoon de fantasia",
+  },
+  {
+    name: "Herick Muller",
+    role: "Analista dos dados do mundo",
+    detail: "Histórias e lendas vivas",
+    adventure: "/manus-storage/herick-cartoon-adventure_e775c3b7.png",
+    heroic: "/manus-storage/herick-cartoon-heroic_b0884e8a.png",
+    alt: "Herick como um clérigo humano de armadura dourada em arte cartoon de fantasia",
+  },
+];
+
 function scrollToId(id: string) {
   document.querySelector(id)?.scrollIntoView({ behavior: "smooth" });
 }
@@ -53,6 +80,7 @@ export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [email, setEmail] = useState("");
   const [submitted, setSubmitted] = useState(false);
+  const [portraitStyle, setPortraitStyle] = useState<"adventure" | "heroic">("adventure");
 
   function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -200,11 +228,32 @@ export default function Home() {
             <h2>Pequeno por escolha.<br /><em>Grande por intenção.</em></h2>
             <p className="team-lede">Somos três amigos que jogam RPG juntos há mais de 20 anos. A Damiens&amp;Devs nasceu da saudade de estar na mesma mesa e da vontade de criar um mundo nosso, com ferramentas para que outras pessoas também possam deixar suas marcas.</p>
           </div>
-          <div className="team-roles">
+          <div className="team-roles team-roles-copy">
             <div className="role-row"><span>01</span><strong>Eduardo Muller</strong><small>desenvolvedor criativo · fantasia imersiva</small></div>
             <div className="role-row"><span>02</span><strong>Tiago Ramos</strong><small>desenvolvedor técnico · mesas através das eras</small></div>
             <div className="role-row"><span>03</span><strong>Herick Muller</strong><small>analista dos dados do mundo · histórias e lendas vivas</small></div>
           </div>
+        </div>
+        <div className="team-gallery-heading">
+          <div>
+            <p className="project-type">Os personagens por trás do mapa</p>
+            <h3>Três jogadores.<br /><em>Uma mesma lenda.</em></h3>
+          </div>
+          <div className="portrait-switcher" role="group" aria-label="Escolha o estilo dos retratos">
+            <button className={portraitStyle === "adventure" ? "active" : ""} type="button" onClick={() => setPortraitStyle("adventure")}>Aventura 80s</button>
+            <button className={portraitStyle === "heroic" ? "active" : ""} type="button" onClick={() => setPortraitStyle("heroic")}>Heróico 80/90</button>
+          </div>
+        </div>
+        <div className="team-gallery">
+          {teamCharacters.map((character, index) => (
+            <article className="character-card" key={character.name}>
+              <div className="character-portrait">
+                <img src={portraitStyle === "adventure" ? character.adventure : character.heroic} alt={character.alt} />
+                <span className="character-index">0{index + 1}</span>
+              </div>
+              <div className="character-info"><h4>{character.name}</h4><p>{character.role}</p><span>{character.detail}</span></div>
+            </article>
+          ))}
         </div>
       </section>
 
